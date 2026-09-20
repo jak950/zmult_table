@@ -1,0 +1,5 @@
+ins_tdevc_rc=0
+ins_tdevct_rc=0
+upd_tadir_rc=0
+tdevc_zmult=1
+tadir_dc=$ZMULT_TABLE

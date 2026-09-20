@@ -37,7 +37,7 @@
 - Consumes: ничего (первая задача).
 - Produces: рабочее дерево репозитория; класс `zcl_mult_table` c методами `get_product( iv_a TYPE i, iv_b TYPE i ) RETURNING VALUE(rv_product) TYPE i` и `build_table( iv_n TYPE i DEFAULT 10 ) RETURNING VALUE(rt_table) TYPE string_table`; скрипт верификации `tools/verify_mult.abap`, пишущий в `/tmp/zver.out` строки `get_product_7_8=…`, `lines=…`, `line62=…`, `line81=…` (задача 4 запускает его и сверяет).
 
-- [ ] **Step 1: Создать `.abapgit.xml`**
+- [x] **Step 1: Создать `.abapgit.xml`**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -51,7 +51,7 @@
 </asx:abap>
 ```
 
-- [ ] **Step 2: Создать `package.devc.xml`**
+- [x] **Step 2: Создать `package.devc.xml`**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -66,7 +66,7 @@
 </abapGit>
 ```
 
-- [ ] **Step 3: Создать `zcl_mult_table.clas.abap`** (синтаксис 7.02, произведение — через переменную, без арифметики внутри `{ }`)
+- [x] **Step 3: Создать `zcl_mult_table.clas.abap`** (синтаксис 7.02, произведение — через переменную, без арифметики внутри `{ }`)
 
 ```abap
 CLASS zcl_mult_table DEFINITION PUBLIC FINAL CREATE PUBLIC.
@@ -104,7 +104,7 @@ CLASS zcl_mult_table IMPLEMENTATION.
 ENDCLASS.
 ```
 
-- [ ] **Step 4: Создать `zcl_mult_table.clas.xml`**
+- [x] **Step 4: Создать `zcl_mult_table.clas.xml`**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -139,7 +139,7 @@ ENDCLASS.
 </abapGit>
 ```
 
-- [ ] **Step 5: Создать `README.md`**
+- [x] **Step 5: Создать `README.md`**
 
 ````markdown
 # zmult_table
@@ -166,7 +166,7 @@ lt = zcl_mult_table=>build_table( iv_n = 9 ).  " 81 строка вида "3 x 4
 Синтаксис совместим с NW 7.02.
 ````
 
-- [ ] **Step 6: Создать `tools/verify_mult.abap`** (исполняется SOAP-каналом; все строки ≤72; итог — в `/tmp/zver.out`)
+- [x] **Step 6: Создать `tools/verify_mult.abap`** (исполняется SOAP-каналом; все строки ≤72; итог — в `/tmp/zver.out`)
 
 ```abap
 REPORT zver_mult.
@@ -191,7 +191,7 @@ ENDLOOP.
 CLOSE DATASET '/tmp/zver.out'.
 ```
 
-- [ ] **Step 7: Локальные проверки (тест задачи)**
+- [x] **Step 7: Локальные проверки (тест задачи)**
 
 ```bash
 cd "c:/Users/79215/Documents/Claude code/Виртуалка/zmult_table"
@@ -207,7 +207,7 @@ grep -c 'METHOD ' zcl_mult_table.clas.abap
 
 Expected: три строки `XML OK`; awk — пусто (нет строк длиннее 72); `grep -c ENDCLASS` = 2; `grep -c 'METHOD '` = 2.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add -A
@@ -229,7 +229,7 @@ Co-Authored-By: Claude Code <noreply@anthropic.com>"
 
 **Внимание:** Step 1–2 — ОДИН составной вызов bash (переменные окружения не переживают отдельные вызовы).
 
-- [ ] **Step 1: Токен → логин → создать репозиторий → push → анонимная проверка** (токен не выводить, маскировать)
+- [x] **Step 1: Токен → логин → создать репозиторий → push → анонимная проверка** (токен не выводить, маскировать)
 
 ```bash
 cd "c:/Users/79215/Documents/Claude code/Виртуалка/zmult_table" || exit 1
@@ -265,7 +265,7 @@ Expected, по порядку: `user=… login=<ваш-логин> token=XXXX***
 
 Анонимный `ls-remote` — это ровно то, чем будет пользоваться abapGit при clone.
 
-- [ ] **Step 2: Сохранить URL для следующих задач**
+- [x] **Step 2: Сохранить URL для следующих задач**
 
 Запомнить последнюю строку вывода: `REPO_URL=https://github.com/<login>/zmult_table`.
 

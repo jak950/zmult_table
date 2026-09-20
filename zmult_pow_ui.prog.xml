@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PROG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+  <PROGDIR>
+   <NAME>ZMULT_POW_UI</NAME>
+   <SUBC>1</SUBC>
+   <RLOAD>E</RLOAD>
+   <FIXPT>X</FIXPT>
+   <UCCHECK>X</UCCHECK>
+  </PROGDIR>
+  <TPOOL>
+   <item>
+    <ID>R</ID>
+    <KEY/>
+    <ENTRY>Multiplication or power</ENTRY>
+    <LENGTH>22</LENGTH>
+   </item>
+   <item>
+    <ID>S</ID>
+    <KEY>RB_MUL</KEY>
+    <ENTRY>Multiplication</ENTRY>
+    <LENGTH>14</LENGTH>
+   </item>
+   <item>
+    <ID>S</ID>
+    <KEY>RB_POW</KEY>
+    <ENTRY>Power</ENTRY>
+    <LENGTH>5</LENGTH>
+   </item>
+   <item>
+    <ID>S</ID>
+    <KEY>S_A</KEY>
+    <ENTRY>Operand 1</ENTRY>
+    <LENGTH>9</LENGTH>
+   </item>
+   <item>
+    <ID>S</ID>
+    <KEY>S_B</KEY>
+    <ENTRY>Operand 2</ENTRY>
+    <LENGTH>9</LENGTH>
+   </item>
+  </TPOOL>
+ </asx:values>
+ </asx:abap>
+</abapGit>
