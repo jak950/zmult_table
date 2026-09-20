@@ -19,13 +19,15 @@ CLASS zcl_mult_table IMPLEMENTATION.
   METHOD build_table.
     DATA: lv_a TYPE i,
           lv_b TYPE i,
-          lv_p TYPE i.
+          lv_p TYPE i,
+          lv_line TYPE string.
     DO iv_n TIMES.
       lv_a = sy-index.
       DO iv_n TIMES.
         lv_b = sy-index.
         lv_p = lv_a * lv_b.
-        APPEND |{ lv_a } x { lv_b } = { lv_p }| TO rt_table.
+        lv_line = |{ lv_a } x { lv_b } = { lv_p }|.
+        APPEND lv_line TO rt_table.
       ENDDO.
     ENDDO.
   ENDMETHOD.
